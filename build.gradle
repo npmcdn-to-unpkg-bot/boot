@@ -6,10 +6,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath group: 'org.hsqldb', name: 'hsqldb', version: gradle.hsqldbVersion
+
     }
 }
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
