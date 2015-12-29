@@ -37,6 +37,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
     runtime('org.hsqldb:hsqldb')
+    runtime('org.liquibase:liquibase-core:3.4.2')
     testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 

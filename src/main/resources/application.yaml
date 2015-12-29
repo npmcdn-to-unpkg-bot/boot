@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: development
+
+---
+
+spring:
+  profiles:  production
+liquibase:
+  changeLog: "classpath:/db/production/changelog.xml"
+
+---
+
+spring:
+  profiles: development
+liquibase:
+  changeLog: "classpath:/db/development/changelog.xml"
