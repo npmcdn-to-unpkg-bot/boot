@@ -3,7 +3,7 @@ rootProject.name = 'boot'
 gradle.ext.hsqldbVersion = '2.3.2'
 //default database config
 gradle.ext.dbName = "xdb"
-gradle.ext.dbFile = "development/database/devDB"
+gradle.ext.dbFile = "dev/database/devDB"
 gradle.ext.dbUser = "SA"
 gradle.ext.dbPassword = "password"
 gradle.ext.dbPort = 9001

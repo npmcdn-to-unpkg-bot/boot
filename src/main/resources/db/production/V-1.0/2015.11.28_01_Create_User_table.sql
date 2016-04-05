@@ -15,7 +15,6 @@ FOR EACH ROW
   BEGIN ATOMIC
     IF NEW.id IS NULL
     THEN
-      -- noinspection SqlResolve
       SET NEW.id = UUID();
     END IF;
   END;
