@@ -88,7 +88,7 @@
     </logger>
 
     <!-- Все ошибки независимо от пакета будут записаны в консоль и ERROR_FILE-->
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="ERROR_FILE"/>
     </root>

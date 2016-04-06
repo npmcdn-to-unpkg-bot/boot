@@ -1,6 +1,6 @@
 package com.intetm.system.security;
 
-import com.intetm.system.db.dao.UserDao;
+import com.intetm.db.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.userdetails.UserDetails;

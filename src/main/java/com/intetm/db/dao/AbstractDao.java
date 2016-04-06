@@ -1,4 +1,4 @@
-package com.intetm.system.db.dao;
+package com.intetm.db.dao;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;

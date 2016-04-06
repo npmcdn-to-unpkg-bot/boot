@@ -1,6 +1,6 @@
-package com.intetm.system.db.dao;
+package com.intetm.db.dao;
 
-import com.intetm.system.db.entity.User;
+import com.intetm.db.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

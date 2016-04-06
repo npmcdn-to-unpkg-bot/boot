@@ -1,4 +1,4 @@
-package com.intetm.system.db.entity;
+package com.intetm.db.entity;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
