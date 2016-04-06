@@ -23,7 +23,8 @@ public class LoginController {
 
     @Autowired
     private LoginService loginService;
-
+    
+    @RolesAllowed(value = {Authority.ADMIN})
     @RequestMapping(value = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     @ResponseBody
     public UserDetails createUser(@RequestParam String username, @RequestParam String password) throws ServiceException {
@@ -35,7 +36,6 @@ public class LoginController {
         }
     }
 
-    @RolesAllowed(value = {Authority.ADMIN})
     @RequestMapping(value = "/getUsers", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     public Object[] getUsers(){
         return loginService.getUsers().stream().
