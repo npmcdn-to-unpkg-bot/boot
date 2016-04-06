@@ -10,6 +10,10 @@ public enum Authority implements GrantedAuthority {
     public static final String COLUMN_USER_ID = "userid";
     public static final String COLUMN_AUTHORITY = "authority";
 
+    public static final String ADMIN = "ADMIN";
+    public static final String USER = "USER";
+    public static final String ANONYMOUS = "ANONYMOUS";
+
 
     @Override
     public String getAuthority() {

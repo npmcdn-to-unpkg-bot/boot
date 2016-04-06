@@ -29,7 +29,7 @@ public class LoginService {
         return user;
     }
 
-    public List<User>  getUsers(){
+    public List<User> getUsers() {
         List<User> result = new ArrayList<>();
         userDao.findAll().forEach(result::add);
         return result;
