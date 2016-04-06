@@ -20,10 +20,9 @@ public class LoginService {
 
     @Transactional
     public User createUser(String userName, String password, Authority authority) throws UserExistsException {
-      /*  if (userDao.isUserExsist(userName)) {
+        if (userDao.isUserExist(userName)) {
             throw new UserExistsException(userName);
         }
-      */
         String hash = encoder.encode(password);
         User user = new User(userName, hash, authority);
         userDao.save(user);
@@ -31,11 +30,8 @@ public class LoginService {
     }
 
     public List<User>  getUsers(){
-        Iterable<User> all = userDao.findAll();
         List<User> result = new ArrayList<>();
-        for(User user:all){
-            result.add(user);
-        }
+        userDao.findAll().forEach(result::add);
         return result;
     }
 
