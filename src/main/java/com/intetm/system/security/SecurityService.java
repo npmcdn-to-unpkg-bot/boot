@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 
 public class SecurityService  implements UserDetailsService {
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private UserDao userDao;
 
@@ -25,7 +26,7 @@ public class SecurityService  implements UserDetailsService {
         UserDetails loadedUser;
 
         try {
-            User user = userDao.find(User.COLUMN_USER_NAME, username).get(0);
+            User user = userDao.findByUserName(username).get(0);
             loadedUser = new org.springframework.security.core.userdetails.User(
                     user.getUserName(), user.getPassword(),
                     DummyAuthority.getAuth());
