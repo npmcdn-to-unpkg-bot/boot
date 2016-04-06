@@ -1,5 +1,6 @@
 package com.intetm.web.login;
 
+import com.intetm.db.entity.Authority;
 import com.intetm.db.entity.User;
 import com.intetm.login.LoginService;
 import com.intetm.login.UserExistsException;
@@ -8,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.intetm.db.entity.Authority.ROLE_USER;
@@ -36,7 +36,34 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/getUsers", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-    public List<User> getUsers(){
-        return loginService.getUsers();
+    public Object[] getUsers(){
+        return loginService.getUsers().stream().
+                map(UserDetails::new).toArray();
+    }
+
+    static class UserDetails {
+        private String userName;
+        private List<Authority> authorities;
+
+        public UserDetails(User user) {
+            this.userName = user.getUsername();
+            this.authorities = user.getAuthorities();
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public List<Authority> getAuthorities() {
+            return authorities;
+        }
+
+        public void setAuthorities(List<Authority> authorities) {
+            this.authorities = authorities;
+        }
     }
 }
